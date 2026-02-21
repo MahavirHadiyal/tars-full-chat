@@ -3,7 +3,7 @@
 import { SignedIn, SignedOut, SignInButton, useUser } from "@clerk/nextjs";
 import { useEffect } from "react";
 import { useMutation } from "convex/react";
-import { api } from "../convex/_generated/api";
+import { api } from "@/convex/_generated/api";
 import ChatLayout from "@/components/ChatLayout";
 
 export default function Page() {
@@ -21,7 +21,7 @@ export default function Page() {
     });
 
     setOnline({ clerkId: user.id });
-  }, [user]);
+  }, [user, createUser, setOnline]);
 
   return (
     <main className="h-screen">
